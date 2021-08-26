@@ -4,7 +4,7 @@
 
 folder="/home/y/.emacs.d/elpa"
 
-source_dir="/home/y/y-emacs/company/dictionary/"
+source_dir="/home/y/y-git/emacs/company/dictionary/"
 
 cd /home/y/.emacs.d/elpa/company-2* &&\
 

@@ -2,7 +2,7 @@
 
 #!/bin/bash
 
-cd /home/y/y-emacs/company/ &&\
+cd /home/y/y-git/emacs/company/ &&\
     ./so.sh &&\
  #   ./dictionary/company.sh &&\
     ./dictionary/delete-copy.sh &&\

@@ -1,7 +1,7 @@
 
 
 ;;emacs 各文件路径
-(add-to-list 'load-path (expand-file-name "/home/y/y-emacs/emacs-config/"))
+(add-to-list 'load-path (expand-file-name "/home/y/y-git/emacs/emacs-config/"))
      (require 'init)
      
      (require 'elpa)

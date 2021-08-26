@@ -14,7 +14,7 @@
 ;;(load-theme 'solarized-theme t)
 
 (add-to-list `custom-theme-load-path
-	     "~/y-emacs/themes/melancholy-theme")
+	     "~/y-git/emacs/themes/melancholy-theme")
 (load-theme 'melancholy t)
 
 (provide 'themes)
