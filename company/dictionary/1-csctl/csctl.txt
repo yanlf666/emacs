@@ -1,0 +1,68 @@
+
+
+	
+
+;;Clock System (CS) Module
+;;CSCTL0
+
+	"CSCTL0_H = CSKEY >> 8;
+	/* Unlock CS registers */	
+	CSCTL0_H = 0;
+	/* Lock CS registers */"
+
+;;CSCTL1
+
+	
+	"CSCTL1 = DCORSEL | DCOFSEL_;
+	/* 单下划线是地址位，双下划线是地址里面的内容 */
+	/* DCO range select : high speed devices */
+	/* 0h : DCOFSEL = 1:1 MHz */
+	/* 1h : DCOFSEL = 1:5.33MHz */
+	/* 2h : DCOFSEL = 1:7MHz */
+	/* 3h : DCOFSEL = 1:8MHz */
+	/* 4h : DCOFSEL = 1:16MHz */
+	/* 5h : DCOFSEL = 1:21MHz */
+	/* 6h : DCOFSEL = 1:24MHz */"
+	"CSCTL1 = DCORSEL_;
+	/* 单下划线是地址位，双下划线是地址里面的内容 */	
+	/* DCO range select : low speed devices */
+	/* 0h : DCOFSEL = 0:1MHz */
+	/* 1h : DCOFSEL = 0:2.67MHz */
+	/* 2h : DCOFSEL = 0:3.5MHz */
+	/* 3h : DCOFSEL = 0:4MHz */
+	/* 4h : DCOFSEL = 0:5.33MHz */
+	/* 5h : DCOFSEL = 0:7MHz */
+	/* 6h : DCOFSEL = 0:8MHz */"
+	
+
+
+
+;;CSCTL2
+	"CSCTL2 = SELA__ | SELS__ | SELM__;
+	/* 单下划线是：地址位，双下划线是：地址里面的内容 */
+	/* SELA : LFXTCLK,VLOCLK,LFMODCLK */
+	/* SELS : LFXTCLK,VLOCLK,LFMODCLK,DCOCLK,MODCLK,HFXTCLK */
+	/* SELM : LFXTCLK,VLOCLK,LFMODCLK,DCOCLK,MODCLK,HFXTCLK */"
+
+;;CSCTL3
+	"CSCTL3 = DIVA__ | DIVS__ | DIVM__;
+	/* 单下划线是地址位，双下划线是地址里面的内容 */
+	/* Divider 1 2 4 8 16 32 */"
+
+
+;;CSCTL4
+	"CSCTL4 = HFXTBYPASS | HFXTOFF | LFXTBYPASS | LFXTOFF | VLOOFF | SMCLKOFF"
+	"CSCTL4 &= ~(HFXTBYPASS | HFXTOFF | LFXTBYPASS | LFXTOFF | VLOOFF | SMCLKOFF)"
+	"CSCTL4 |= HFXTDRIVE_ | HFFREQ_ | LFXTDRIVE_;"
+	
+
+;;CSCTL5
+	"CSCTL5 &= ~(LFXTOFFG | HFXTOFFG)"
+	"CSCTL5 |= LFXTOFFG | HFXTOFFG"
+
+;;CSCTL6
+	"CSCTL6 |= MODCLKREQEN | SMCLKREQN | MCLKREQEN | ACLKREQEN"
+	"CSCTL6 &= ~(MODCLKREQEN | SMCLKREQN | MCLKREQEN | ACLKREQE)"
+
+;;ycsctl
+	
