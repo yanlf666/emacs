@@ -1,8 +1,14 @@
 
 
+
+
 ;;字体
 
-(which-function-mode 1)
+;; 注销 global-unset-key (kbd "your-key")
+(global-set-key (kbd "C-c c") 'comment-region)
+(global-set-key (kbd "C-c u") 'uncomment-region)
+(global-set-key (kbd "C-c p j") 'projectile-find-tag)
+
 
 (add-to-list 'default-frame-alist
              '(font . "Hack-15"))
@@ -60,9 +66,23 @@
 
 ;;功能
 ;;括号补全
-;;(electric-pair-mode t)
+(electric-pair-mode t)
+
+(setq electric-pair-pairs
+      '(
+	(?\< . ?\>)
+	(?\" . ?\")
+	(?\' . ?\')
+	(?\` . ?\`)
+	(?\( . ?\))
+	(?\[ . ?\])
+	(?\{ . ?\})
+	
+	))
 ;;配对括号高亮
 (show-paren-mode 1)
+
+
 ;;当前行高亮
 (global-hl-line-mode 1)
 ;;行号
@@ -76,9 +96,9 @@
 ;;防止页面滚动时跳动， scroll-margin 3 可以在靠近屏幕边沿3行时就开始滚动，可以很好的看到上下文。
 (setq scroll-margin 3 scroll-conservatively 10000)
 ;; 文件关联
-(add-to-list 'auto-mode-alist '("\\.text\\'" . c-mode))
+;;(add-to-list 'auto-mode-alist '("\\.text\\'" . c-mode))
 (add-to-list 'auto-mode-alist '("\\.c\\'" . c-mode))
-(add-to-list 'auto-mode-alist '("\\.fw\\'" . c-mode))
+;;(add-to-list 'auto-mode-alist '("\\.fw\\'" . c-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.sh\\'" . c-mode))
 
 ;;把c语言风格设置为k&r,gnu,bsd,linux,python,java,风格
